@@ -1,14 +1,14 @@
-# create a list with n items
-def list_(n):
-    ls = list(range(0, n, 1))
-    return ls
+class Columns():
+    ''' create a 2D array of columns '''
+    def __init__(self, lis, slice_len):
+        self.lis = lis
+        self.slice_len = slice_len
 
-# slice a list into n sized chuncks
-def s_list(l, n):   
-    for i in range(0, len(l), n):
-        yield l[i:i + n]
+    # slice the list into n sized chuncks
+    def s_list(self):
+        for i in range(0, len(self.lis), self.slice_len):
+            yield self.lis[i:i + self.slice_len]
 
-sliced_list = list(s_list(list_(100), 10))
-
-# create columns sublists
-column_list = list(zip(*sliced_list))
+    # create columns sublists
+    def columns(self):
+        return list(zip(*self.s_list()))
