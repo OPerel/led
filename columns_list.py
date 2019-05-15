@@ -1,5 +1,5 @@
 class Columns():
-    ''' create a 2D array of columns '''
+    ''' create a 2D array of columns from a 1D list '''
     def __init__(self, lis, slice_len):
         self.lis = lis
         self.slice_len = slice_len
